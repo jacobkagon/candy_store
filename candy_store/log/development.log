@@ -1,0 +1,2398 @@
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCandies (20201029162404)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "candies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "calories" integer, "wrapper_color" varchar, "has_nuts" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201029162404"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-10-29 16:24:48.828469"], ["updated_at", "2020-10-29 16:24:48.828469"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2020-10-29 12:31:20 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicationController#home as HTML
+Completed 406 Not Acceptable in 4ms (ActiveRecord: 0.0ms | Allocations: 1332)
+
+
+  
+ActionController::MissingExactTemplate (ApplicationController#home is missing a template for request formats: text/html):
+  
+actionpack (6.0.3.4) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-10-29 12:31:26 -0400
+Processing by ApplicationController#home as HTML
+Completed 406 Not Acceptable in 1ms (ActiveRecord: 0.0ms | Allocations: 549)
+
+
+  
+ActionController::MissingExactTemplate (ApplicationController#home is missing a template for request formats: text/html):
+  
+actionpack (6.0.3.4) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-10-29 12:32:57 -0400
+Processing by ApplicationController#home as HTML
+Completed 406 Not Acceptable in 2ms (ActiveRecord: 0.0ms | Allocations: 1229)
+
+
+  
+ActionController::MissingExactTemplate (ApplicationController#home is missing a template for request formats: text/html):
+  
+actionpack (6.0.3.4) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-10-29 12:33:03 -0400
+Processing by ApplicationController#home as HTML
+Completed 406 Not Acceptable in 1ms (ActiveRecord: 0.0ms | Allocations: 539)
+
+
+  
+ActionController::MissingExactTemplate (ApplicationController#home is missing a template for request formats: text/html):
+  
+actionpack (6.0.3.4) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-10-29 12:34:00 -0400
+Processing by ApplicationController#home as HTML
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 86)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/jacobkagon/Flatiron/code/candy_store/candy_store/public/packs
+[Webpacker] Hash: 15d1bb7b54cf6326b9ba
+Version: webpack 4.44.2
+Time: 1269ms
+Built at: 10/29/2020 12:34:02 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-9afcbb5693aa87623e69.js    124 KiB  application  [emitted] [immutable]  application
+js/application-9afcbb5693aa87623e69.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-9afcbb5693aa87623e69.js js/application-9afcbb5693aa87623e69.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 749 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+Completed 200 OK in 2588ms (Views: 2587.2ms | ActiveRecord: 0.0ms | Allocations: 15638)
+
+
+Started GET "/coupons" for ::1 at 2020-10-29 12:45:09 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/coupons"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/credits" for ::1 at 2020-10-29 12:45:14 -0400
+Processing by ApplicationController#credits as HTML
+  Rendering application/credits.html.erb within layouts/application
+  Rendered application/credits.html.erb within layouts/application (Duration: 0.2ms | Allocations: 86)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 45ms (Views: 44.2ms | ActiveRecord: 0.0ms | Allocations: 16423)
+
+
+Started GET "/credits" for ::1 at 2020-10-29 12:47:57 -0400
+Processing by ApplicationController#credits as HTML
+  Rendering application/credits.html.erb within layouts/application
+  Rendered application/credits.html.erb within layouts/application (Duration: 0.2ms | Allocations: 95)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 4572)
+
+
+Started GET "/candies" for ::1 at 2020-10-29 12:50:47 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CandiesController#index as HTML
+  Rendering candies/index.html.erb within layouts/application
+  Rendered candies/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 86)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 5306)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCandy Create (0.4ms)[0m  [1m[32mINSERT INTO "candies" ("name", "calories", "wrapper_color", "has_nuts", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Caramel"], ["calories", 101], ["wrapper_color", "pear"], ["has_nuts", 1], ["created_at", "2020-10-29 18:06:35.995537"], ["updated_at", "2020-10-29 18:06:35.995537"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCandy Create (0.2ms)[0m  [1m[32mINSERT INTO "candies" ("name", "calories", "wrapper_color", "has_nuts", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Cinnamon"], ["calories", 255], ["wrapper_color", "raspberry"], ["has_nuts", 0], ["created_at", "2020-10-29 18:06:35.999843"], ["updated_at", "2020-10-29 18:06:35.999843"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCandy Create (0.3ms)[0m  [1m[32mINSERT INTO "candies" ("name", "calories", "wrapper_color", "has_nuts", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Caramel"], ["calories", 334], ["wrapper_color", "puce"], ["has_nuts", 1], ["created_at", "2020-10-29 18:06:36.003602"], ["updated_at", "2020-10-29 18:06:36.003602"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCandy Create (0.2ms)[0m  [1m[32mINSERT INTO "candies" ("name", "calories", "wrapper_color", "has_nuts", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Walnuts"], ["calories", 301], ["wrapper_color", "olive"], ["has_nuts", 1], ["created_at", "2020-10-29 18:06:36.006871"], ["updated_at", "2020-10-29 18:06:36.006871"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCandy Create (0.3ms)[0m  [1m[32mINSERT INTO "candies" ("name", "calories", "wrapper_color", "has_nuts", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Gummy Bears"], ["calories", 391], ["wrapper_color", "brown"], ["has_nuts", 1], ["created_at", "2020-10-29 18:06:36.010247"], ["updated_at", "2020-10-29 18:06:36.010247"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCandy Create (0.3ms)[0m  [1m[32mINSERT INTO "candies" ("name", "calories", "wrapper_color", "has_nuts", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Glaze"], ["calories", 482], ["wrapper_color", "cerulean"], ["has_nuts", 0], ["created_at", "2020-10-29 18:06:36.013852"], ["updated_at", "2020-10-29 18:06:36.013852"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCandy Create (0.3ms)[0m  [1m[32mINSERT INTO "candies" ("name", "calories", "wrapper_color", "has_nuts", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Frosting"], ["calories", 210], ["wrapper_color", "bronze"], ["has_nuts", 1], ["created_at", "2020-10-29 18:06:36.017143"], ["updated_at", "2020-10-29 18:06:36.017143"]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCandy Create (0.3ms)[0m  [1m[32mINSERT INTO "candies" ("name", "calories", "wrapper_color", "has_nuts", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Gummy Bears"], ["calories", 477], ["wrapper_color", "plum"], ["has_nuts", 1], ["created_at", "2020-10-29 18:06:36.020104"], ["updated_at", "2020-10-29 18:06:36.020104"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCandy Create (0.3ms)[0m  [1m[32mINSERT INTO "candies" ("name", "calories", "wrapper_color", "has_nuts", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Chocolate Syrup"], ["calories", 234], ["wrapper_color", "bronze"], ["has_nuts", 1], ["created_at", "2020-10-29 18:06:36.025602"], ["updated_at", "2020-10-29 18:06:36.025602"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCandy Create (0.2ms)[0m  [1m[32mINSERT INTO "candies" ("name", "calories", "wrapper_color", "has_nuts", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Granola"], ["calories", 424], ["wrapper_color", "harlequin"], ["has_nuts", 1], ["created_at", "2020-10-29 18:06:36.028740"], ["updated_at", "2020-10-29 18:06:36.028740"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mCandy Load (0.1ms)[0m  [1m[34mSELECT "candies".* FROM "candies" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/" for ::1 at 2020-10-29 14:40:08 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ApplicationController#home as HTML
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 89)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 4583)
+
+
+Started GET "/candies" for ::1 at 2020-10-29 14:40:14 -0400
+Processing by CandiesController#index as HTML
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:3
+  Rendered candies/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 6050)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.9ms | Allocations: 10514)
+
+
+Started GET "/candies" for ::1 at 2020-10-29 14:40:49 -0400
+Processing by CandiesController#index as HTML
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.1ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:3
+  Rendered candies/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 878)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.1ms | Allocations: 5678)
+
+
+Started GET "/candies/2" for ::1 at 2020-10-29 14:45:54 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CandiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies" WHERE "candies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/candies_controller.rb:8:in `show'
+  Rendering candies/show.html.erb within layouts/application
+  Rendered candies/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 175)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 7.0ms | ActiveRecord: 0.9ms | Allocations: 11044)
+
+
+Started GET "/candies/2" for ::1 at 2020-10-29 14:46:26 -0400
+Processing by CandiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCandy Load (0.1ms)[0m  [1m[34mSELECT "candies".* FROM "candies" WHERE "candies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/candies_controller.rb:8:in `show'
+  Rendering candies/show.html.erb within layouts/application
+  Rendered candies/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 166)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.1ms | Allocations: 5504)
+
+
+Started GET "/candies" for ::1 at 2020-10-29 14:47:34 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CandiesController#index as HTML
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:3
+  Rendered candies/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 6568)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.6ms | Allocations: 8065)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"candies"}, missing required keys: [:id]):
+    1: <h1>Candy List</h1>
+    2: <ul>
+    3: <%@candies.each do |candy|%>
+    4: <li><%=link_to candy.name, candy_path%></li>
+    5: <%end%>
+    6: 
+    7: </ul>
+  
+app/views/candies/index.html.erb:4
+app/views/candies/index.html.erb:3
+Started GET "/candies" for ::1 at 2020-10-29 14:47:57 -0400
+Processing by CandiesController#index as HTML
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:3
+  Rendered candies/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1669)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms | Allocations: 2088)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"candies"}, missing required keys: [:id]):
+    1: <h1>Candy List</h1>
+    2: <ul>
+    3: <%@candies.each do |candy|%>
+    4: <li><%=link_to candy.name, candy_path%></li>
+    5: <%end%>
+    6: 
+    7: </ul>
+  
+app/views/candies/index.html.erb:4
+app/views/candies/index.html.erb:3
+Started GET "/routes" for ::1 at 2020-10-29 14:48:08 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/routes"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/candies" for ::1 at 2020-10-29 14:49:09 -0400
+Processing by CandiesController#index as HTML
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:3
+  Rendered candies/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1132)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.2ms | Allocations: 5934)
+
+
+Started GET "/candies/1" for ::1 at 2020-10-29 14:49:11 -0400
+Processing by CandiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies" WHERE "candies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/candies_controller.rb:8:in `show'
+  Rendering candies/show.html.erb within layouts/application
+  Rendered candies/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 173)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 6.4ms | ActiveRecord: 0.2ms | Allocations: 4840)
+
+
+Started GET "/candies/3" for ::1 at 2020-10-29 14:49:22 -0400
+Processing by CandiesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies" WHERE "candies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/candies_controller.rb:8:in `show'
+  Rendering candies/show.html.erb within layouts/application
+  Rendered candies/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 17)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.2ms | Allocations: 4423)
+
+
+Started GET "/candies/10" for ::1 at 2020-10-29 14:49:29 -0400
+Processing by CandiesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mCandy Load (0.1ms)[0m  [1m[34mSELECT "candies".* FROM "candies" WHERE "candies"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/candies_controller.rb:8:in `show'
+  Rendering candies/show.html.erb within layouts/application
+  Rendered candies/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 17)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 7.7ms | ActiveRecord: 0.1ms | Allocations: 4425)
+
+
+Started GET "/candies" for ::1 at 2020-10-29 14:50:17 -0400
+Processing by CandiesController#index as HTML
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.1ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:3
+  Rendered candies/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1130)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.1ms | Allocations: 5931)
+
+
+Started GET "/candies/4" for ::1 at 2020-10-29 14:50:18 -0400
+Processing by CandiesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies" WHERE "candies"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/candies_controller.rb:8:in `show'
+  Rendering candies/show.html.erb within layouts/application
+  Rendered candies/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 167)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 7.4ms | ActiveRecord: 0.2ms | Allocations: 4715)
+
+
+Started GET "/candies/4" for ::1 at 2020-10-29 14:50:37 -0400
+Processing by CandiesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies" WHERE "candies"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/candies_controller.rb:8:in `show'
+  Rendering candies/show.html.erb within layouts/application
+  Rendered candies/show.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1452)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.2ms | Allocations: 3140)
+
+
+  
+ActionView::Template::Error (uninitialized constant #<Class:0x00007f80dc65fdd8>::List):
+     8: <li>Wrapper Color: <%=@candy.wrapper_color%></li>
+     9: <li>Contains Nuts: <%=@candy.has_nuts%></li>
+    10: </ul>
+    11: <p><%= link_to Candy List, candies_path%></p>
+  
+app/views/candies/show.html.erb:11
+Started GET "/candies/4" for ::1 at 2020-10-29 14:51:03 -0400
+Processing by CandiesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies" WHERE "candies"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/candies_controller.rb:8:in `show'
+  Rendering candies/show.html.erb within layouts/application
+  Rendered candies/show.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1432)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.2ms | Allocations: 3118)
+
+
+  
+ActionView::Template::Error (uninitialized constant #<Class:0x00007f80daa80220>::List):
+     8: <li>Wrapper Color: <%=@candy.wrapper_color%></li>
+     9: <li>Contains Nuts: <%=@candy.has_nuts%></li>
+    10: </ul>
+    11: <p><%= link_to Candy List, candies_path(@candies)%></p>
+  
+app/views/candies/show.html.erb:11
+Started GET "/candies/4" for ::1 at 2020-10-29 14:51:04 -0400
+Processing by CandiesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCandy Load (0.1ms)[0m  [1m[34mSELECT "candies".* FROM "candies" WHERE "candies"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/candies_controller.rb:8:in `show'
+  Rendering candies/show.html.erb within layouts/application
+  Rendered candies/show.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1271)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.1ms | Allocations: 2218)
+
+
+  
+ActionView::Template::Error (uninitialized constant #<Class:0x00007f80daa80220>::List):
+     8: <li>Wrapper Color: <%=@candy.wrapper_color%></li>
+     9: <li>Contains Nuts: <%=@candy.has_nuts%></li>
+    10: </ul>
+    11: <p><%= link_to Candy List, candies_path(@candies)%></p>
+  
+app/views/candies/show.html.erb:11
+Started GET "/candies/4" for ::1 at 2020-10-29 14:51:34 -0400
+Processing by CandiesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCandy Load (0.1ms)[0m  [1m[34mSELECT "candies".* FROM "candies" WHERE "candies"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/candies_controller.rb:8:in `show'
+  Rendering candies/show.html.erb within layouts/application
+  Rendered candies/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 217)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.1ms | Allocations: 5547)
+
+
+Started GET "/candies" for ::1 at 2020-10-29 14:51:39 -0400
+Processing by CandiesController#index as HTML
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:3
+  Rendered candies/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1130)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.2ms | Allocations: 5150)
+
+
+Started GET "/candies/7" for ::1 at 2020-10-29 14:51:40 -0400
+Processing by CandiesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies" WHERE "candies"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/candies_controller.rb:8:in `show'
+  Rendering candies/show.html.erb within layouts/application
+  Rendered candies/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 50)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.2ms | Allocations: 4456)
+
+
+Started GET "/candies" for ::1 at 2020-10-29 14:51:46 -0400
+Processing by CandiesController#index as HTML
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:3
+  Rendered candies/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 988)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.2ms | Allocations: 4863)
+
+
+Started GET "/candies/5" for ::1 at 2020-10-29 14:51:47 -0400
+Processing by CandiesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies" WHERE "candies"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/candies_controller.rb:8:in `show'
+  Rendering candies/show.html.erb within layouts/application
+  Rendered candies/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 49)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.2ms | Allocations: 4455)
+
+
+Started GET "/candies" for ::1 at 2020-10-29 14:51:51 -0400
+Processing by CandiesController#index as HTML
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:3
+  Rendered candies/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 988)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.2ms | Allocations: 4868)
+
+
+Started GET "/candies/9" for ::1 at 2020-10-29 14:51:53 -0400
+Processing by CandiesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies" WHERE "candies"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/candies_controller.rb:8:in `show'
+  Rendering candies/show.html.erb within layouts/application
+  Rendered candies/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 49)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.2ms | Allocations: 4458)
+
+
+Started GET "/candies" for ::1 at 2020-10-29 14:52:09 -0400
+Processing by CandiesController#index as HTML
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:3
+  Rendered candies/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 988)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.2ms | Allocations: 4861)
+
+
+Started GET "/candies/8" for ::1 at 2020-10-29 14:52:10 -0400
+Processing by CandiesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies" WHERE "candies"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/candies_controller.rb:8:in `show'
+  Rendering candies/show.html.erb within layouts/application
+  Rendered candies/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 49)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 0.2ms | Allocations: 4458)
+
+
+Started GET "/candies" for ::1 at 2020-10-29 14:52:14 -0400
+Processing by CandiesController#index as HTML
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:3
+  Rendered candies/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 988)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.2ms | Allocations: 4865)
+
+
+Started GET "/candies/6" for ::1 at 2020-10-29 14:52:15 -0400
+Processing by CandiesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCandy Load (0.3ms)[0m  [1m[34mSELECT "candies".* FROM "candies" WHERE "candies"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/candies_controller.rb:8:in `show'
+  Rendering candies/show.html.erb within layouts/application
+  Rendered candies/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 49)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 5.6ms | ActiveRecord: 0.3ms | Allocations: 4454)
+
+
+Started GET "/candies/6" for ::1 at 2020-10-29 15:14:55 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CandiesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCandy Load (0.1ms)[0m  [1m[34mSELECT "candies".* FROM "candies" WHERE "candies"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/candies_controller.rb:8:in `show'
+  Rendering candies/show.html.erb within layouts/application
+  Rendered candies/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 226)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 6.0ms | ActiveRecord: 0.1ms | Allocations: 10403)
+
+
+Started GET "/candies" for ::1 at 2020-10-29 15:14:57 -0400
+Processing by CandiesController#index as HTML
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.3ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:3
+  Rendered candies/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1151)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.3ms | Allocations: 5167)
+
+
+Started GET "/candies/10" for ::1 at 2020-10-29 15:15:13 -0400
+Processing by CandiesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies" WHERE "candies"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/candies_controller.rb:8:in `show'
+  Rendering candies/show.html.erb within layouts/application
+  Rendered candies/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 50)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 0.2ms | Allocations: 4452)
+
+
+Started GET "/candies/new" for ::1 at 2020-10-29 15:15:18 -0400
+Processing by CandiesController#new as HTML
+  Rendering candies/new.html.erb within layouts/application
+  Rendered candies/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 1148)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1698)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Create a Candy</h1>
+<div>
+<%=form_tag candies_path do%>
+<%=label_tag "Candy Name"%><br>
+<%=text_field_tag :name%><br>
+<%=label_tag "Calories"%><br>
+<%=number_field_tag :calories%><br>
+<%=label_tag "Wrapper Color"%><br>
+<%=text_field_tag :wrapper_color%>
+<%=label_tag "Candy Contains Nuts?"%><br>
+<%=check_box_tag :contains_nuts%><br>
+<%=submit_tag "Submit Your Candy"%>
+</div>
+):
+1:    <h1>Create a Candy</h1>
+2:    <div>
+3:    <%=form_tag candies_path do%>
+4:    <%=label_tag "Candy Name"%><br>
+5:    <%=text_field_tag :name%><br>
+6:    <%=label_tag "Calories"%><br>
+7:    <%=number_field_tag :calories%><br>
+8:    <%=label_tag "Wrapper Color"%><br>
+9:    <%=text_field_tag :wrapper_color%>
+10:    <%=label_tag "Candy Contains Nuts?"%><br>
+11:    <%=check_box_tag :contains_nuts%><br>
+12:    <%=submit_tag "Submit Your Candy"%>
+13:    </div>
+  
+app/views/candies/new.html.erb:15: syntax error, unexpected end-of-input, expecting end
+app/views/candies/new.html.erb:15: syntax error, unexpected end-of-input, expecting end
+app/views/candies/new.html.erb:15: syntax error, unexpected end-of-input, expecting end
+app/views/candies/new.html.erb:15: syntax error, unexpected end-of-input, expecting end
+app/views/candies/new.html.erb:15: syntax error, unexpected end-of-input, expecting end
+app/views/candies/new.html.erb:15: syntax error, unexpected end-of-input, expecting end
+Started GET "/candies/new" for ::1 at 2020-10-29 15:16:03 -0400
+Processing by CandiesController#new as HTML
+  Rendering candies/new.html.erb within layouts/application
+  Rendered candies/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 733)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 5527)
+
+
+Started GET "/candies/new" for ::1 at 2020-10-29 15:16:42 -0400
+Processing by CandiesController#new as HTML
+  Rendering candies/new.html.erb within layouts/application
+  Rendered candies/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 706)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 5492)
+
+
+Started GET "/candies/new" for ::1 at 2020-10-29 15:17:06 -0400
+Processing by CandiesController#new as HTML
+  Rendering candies/new.html.erb within layouts/application
+  Rendered candies/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 704)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.0ms | Allocations: 5491)
+
+
+Started POST "/candies" for ::1 at 2020-10-29 15:17:46 -0400
+Processing by CandiesController#create as HTML
+  Parameters: {"authenticity_token"=>"qum2/KuxrQY5T6/TykUjuvInUag7owHPIgtmuUE5hSAwDPFWQ89VtE3pcZddtldmAo/VQj/ulXBei3AEYLTgmg==", "name"=>"Skittles", "calories"=>"350", "wrapper_color"=>"red", "commit"=>"Submit Your Candy"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/candies_controller.rb:16:in `create'
+  [1m[36mCandy Create (0.4ms)[0m  [1m[32mINSERT INTO "candies" ("name", "calories", "wrapper_color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Skittles"], ["calories", 350], ["wrapper_color", "red"], ["created_at", "2020-10-29 19:17:46.063125"], ["updated_at", "2020-10-29 19:17:46.063125"]]
+  ↳ app/controllers/candies_controller.rb:16:in `create'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/candies_controller.rb:16:in `create'
+Redirected to http://localhost:3000/candies/11
+Completed 302 Found in 5ms (ActiveRecord: 1.1ms | Allocations: 2869)
+
+
+Started GET "/candies/11" for ::1 at 2020-10-29 15:17:46 -0400
+Processing by CandiesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies" WHERE "candies"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/candies_controller.rb:8:in `show'
+  Rendering candies/show.html.erb within layouts/application
+  Rendered candies/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 213)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.2ms | Allocations: 4760)
+
+
+Started GET "/candies" for ::1 at 2020-10-29 15:17:58 -0400
+Processing by CandiesController#index as HTML
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:3
+  Rendered candies/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1173)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.2ms | Allocations: 5189)
+
+
+Started GET "/candies" for ::1 at 2020-10-29 15:19:52 -0400
+Processing by CandiesController#index as HTML
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.1ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:3
+  Rendered candies/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1168)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.1ms | Allocations: 5969)
+
+
+Started GET "/candies/new" for ::1 at 2020-10-29 15:19:58 -0400
+Processing by CandiesController#new as HTML
+  Rendering candies/new.html.erb within layouts/application
+  Rendered candies/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 708)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 4715)
+
+
+Started POST "/candies" for ::1 at 2020-10-29 15:20:24 -0400
+Processing by CandiesController#create as HTML
+  Parameters: {"authenticity_token"=>"PuHzgzq/0O1KHeyqqmrvepkRn4A614kbcwojsvW+M4ikBLQp0sEoXz67Mu49mZumabkbaj6aHaQPijUP1DNWMg==", "name"=>"Snickers", "calories"=>"200", "wrapper_color"=>"Brown", "contains_nuts"=>"yes", "commit"=>"Submit Your Candy"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/candies_controller.rb:16:in `create'
+  [1m[36mCandy Create (0.3ms)[0m  [1m[32mINSERT INTO "candies" ("name", "calories", "wrapper_color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Snickers"], ["calories", 200], ["wrapper_color", "Brown"], ["created_at", "2020-10-29 19:20:24.103337"], ["updated_at", "2020-10-29 19:20:24.103337"]]
+  ↳ app/controllers/candies_controller.rb:16:in `create'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/candies_controller.rb:16:in `create'
+Redirected to http://localhost:3000/candies/12
+Completed 302 Found in 8ms (ActiveRecord: 1.2ms | Allocations: 2651)
+
+
+Started GET "/candies/12" for ::1 at 2020-10-29 15:20:24 -0400
+Processing by CandiesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mCandy Load (0.1ms)[0m  [1m[34mSELECT "candies".* FROM "candies" WHERE "candies"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/candies_controller.rb:8:in `show'
+  Rendering candies/show.html.erb within layouts/application
+  Rendered candies/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 213)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 11.6ms | ActiveRecord: 0.1ms | Allocations: 4764)
+
+
+Started GET "/candies/12" for ::1 at 2020-10-29 15:24:58 -0400
+Processing by CandiesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mCandy Load (0.1ms)[0m  [1m[34mSELECT "candies".* FROM "candies" WHERE "candies"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/candies_controller.rb:8:in `show'
+  Rendering candies/show.html.erb within layouts/application
+  Rendered candies/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 213)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 11.4ms | ActiveRecord: 0.1ms | Allocations: 5539)
+
+
+Started GET "/candies/12" for ::1 at 2020-10-29 15:25:00 -0400
+Processing by CandiesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies" WHERE "candies"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/candies_controller.rb:8:in `show'
+  Rendering candies/show.html.erb within layouts/application
+  Rendered candies/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 51)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 15.4ms | ActiveRecord: 0.2ms | Allocations: 4459)
+
+
+Started GET "/candies/12" for ::1 at 2020-10-29 15:25:04 -0400
+Processing by CandiesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies" WHERE "candies"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/candies_controller.rb:8:in `show'
+  Rendering candies/show.html.erb within layouts/application
+  Rendered candies/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 46)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.2ms | Allocations: 4450)
+
+
+Started GET "/candies" for ::1 at 2020-10-29 15:25:05 -0400
+Processing by CandiesController#index as HTML
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:3
+  Rendered candies/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1211)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 0.2ms | Allocations: 5223)
+
+
+Started GET "/candies/12" for ::1 at 2020-10-29 15:25:10 -0400
+Processing by CandiesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies" WHERE "candies"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/candies_controller.rb:8:in `show'
+  Rendering candies/show.html.erb within layouts/application
+  Rendered candies/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 47)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 7.0ms | ActiveRecord: 0.2ms | Allocations: 4455)
+
+
+Started GET "/candies/new" for ::1 at 2020-10-29 15:25:13 -0400
+Processing by CandiesController#new as HTML
+  Rendering candies/new.html.erb within layouts/application
+  Rendered candies/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 707)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms | Allocations: 4707)
+
+
+Started POST "/candies" for ::1 at 2020-10-29 15:25:29 -0400
+Processing by CandiesController#create as HTML
+  Parameters: {"authenticity_token"=>"kGEslwIj44c6tK3ug0eniBgYaSvuZn8CcA9hzkpqH30KhGs96l0bNU4Sc6oUtNNU6LDtweor670Mj3dza+d6xw==", "name"=>"Milky Way", "calories"=>"230", "wrapper_color"=>"Black", "contains_nuts"=>"true", "commit"=>"Submit Your Candy"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/candies_controller.rb:16:in `create'
+  [1m[36mCandy Create (0.4ms)[0m  [1m[32mINSERT INTO "candies" ("name", "calories", "wrapper_color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Milky Way"], ["calories", 230], ["wrapper_color", "Black"], ["created_at", "2020-10-29 19:25:29.786902"], ["updated_at", "2020-10-29 19:25:29.786902"]]
+  ↳ app/controllers/candies_controller.rb:16:in `create'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/candies_controller.rb:16:in `create'
+Redirected to http://localhost:3000/candies/13
+Completed 302 Found in 6ms (ActiveRecord: 1.3ms | Allocations: 2653)
+
+
+Started GET "/candies/13" for ::1 at 2020-10-29 15:25:29 -0400
+Processing by CandiesController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mCandy Load (0.1ms)[0m  [1m[34mSELECT "candies".* FROM "candies" WHERE "candies"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/candies_controller.rb:8:in `show'
+  Rendering candies/show.html.erb within layouts/application
+  Rendered candies/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 46)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.1ms | Allocations: 4457)
+
+
+Started GET "/candies/13" for ::1 at 2020-10-29 15:27:02 -0400
+Processing by CandiesController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mCandy Load (0.1ms)[0m  [1m[34mSELECT "candies".* FROM "candies" WHERE "candies"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/candies_controller.rb:8:in `show'
+  Rendering candies/show.html.erb within layouts/application
+  Rendered candies/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 213)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 7.8ms | ActiveRecord: 0.1ms | Allocations: 5546)
+
+
+Started GET "/candies/new" for ::1 at 2020-10-29 15:27:05 -0400
+Processing by CandiesController#new as HTML
+  Rendering candies/new.html.erb within layouts/application
+  Rendered candies/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 851)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 4851)
+
+
+Started POST "/candies" for ::1 at 2020-10-29 15:27:30 -0400
+Processing by CandiesController#create as HTML
+  Parameters: {"authenticity_token"=>"vPRCTjBRkmdtSmld/gkAiFLRXrjPwCYnu/0tw8NFWd8mEQXk2C9q1Rnstxlp+nRUonnaUsuNspjHfTt+4sg8ZQ==", "name"=>"Candy Cane", "calories"=>"120", "wrapper_color"=>"Red", "contains_nuts"=>"false", "commit"=>"Submit Your Candy"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/candies_controller.rb:16:in `create'
+  [1m[36mCandy Create (0.5ms)[0m  [1m[32mINSERT INTO "candies" ("name", "calories", "wrapper_color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Candy Cane"], ["calories", 120], ["wrapper_color", "Red"], ["created_at", "2020-10-29 19:27:30.179837"], ["updated_at", "2020-10-29 19:27:30.179837"]]
+  ↳ app/controllers/candies_controller.rb:16:in `create'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/candies_controller.rb:16:in `create'
+Redirected to http://localhost:3000/candies/14
+Completed 302 Found in 5ms (ActiveRecord: 1.4ms | Allocations: 2658)
+
+
+Started GET "/candies/14" for ::1 at 2020-10-29 15:27:30 -0400
+Processing by CandiesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies" WHERE "candies"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/candies_controller.rb:8:in `show'
+  Rendering candies/show.html.erb within layouts/application
+  Rendered candies/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 46)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 0.2ms | Allocations: 4464)
+
+
+Started GET "/candies/14" for ::1 at 2020-10-29 15:28:34 -0400
+Processing by CandiesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mCandy Load (0.1ms)[0m  [1m[34mSELECT "candies".* FROM "candies" WHERE "candies"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/candies_controller.rb:8:in `show'
+  Rendering candies/show.html.erb within layouts/application
+  Rendered candies/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 218)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.1ms | Allocations: 5544)
+
+
+Started GET "/candies/14" for ::1 at 2020-10-29 15:28:35 -0400
+Processing by CandiesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mCandy Load (0.1ms)[0m  [1m[34mSELECT "candies".* FROM "candies" WHERE "candies"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/candies_controller.rb:8:in `show'
+  Rendering candies/show.html.erb within layouts/application
+  Rendered candies/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 51)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.1ms | Allocations: 4462)
+
+
+Started GET "/candies/14" for ::1 at 2020-10-29 15:28:35 -0400
+Processing by CandiesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mCandy Load (0.1ms)[0m  [1m[34mSELECT "candies".* FROM "candies" WHERE "candies"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/candies_controller.rb:8:in `show'
+  Rendering candies/show.html.erb within layouts/application
+  Rendered candies/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 46)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.1ms | Allocations: 4450)
+
+
+Started GET "/candies/new" for ::1 at 2020-10-29 15:29:03 -0400
+Processing by CandiesController#new as HTML
+  Rendering candies/new.html.erb within layouts/application
+  Rendered candies/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 849)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms | Allocations: 4848)
+
+
+Started POST "/candies" for ::1 at 2020-10-29 15:29:18 -0400
+Processing by CandiesController#create as HTML
+  Parameters: {"authenticity_token"=>"ZkMaMJJhMMEtyHTyrkWK6r3ucIPUSk94yl7OsBhPp6v8pl2aeh/Ic1luqrY5tv42TUb0adAH28e23tgNOcLCEQ==", "name"=>"Skittles", "calories"=>"120", "wrapper_color"=>"Red", "has_nuts"=>"false", "commit"=>"Submit Your Candy"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/candies_controller.rb:16:in `create'
+  [1m[36mCandy Create (0.3ms)[0m  [1m[32mINSERT INTO "candies" ("name", "calories", "wrapper_color", "has_nuts", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Skittles"], ["calories", 120], ["wrapper_color", "Red"], ["has_nuts", 0], ["created_at", "2020-10-29 19:29:18.645134"], ["updated_at", "2020-10-29 19:29:18.645134"]]
+  ↳ app/controllers/candies_controller.rb:16:in `create'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/candies_controller.rb:16:in `create'
+Redirected to http://localhost:3000/candies/15
+Completed 302 Found in 5ms (ActiveRecord: 1.3ms | Allocations: 2665)
+
+
+Started GET "/candies/15" for ::1 at 2020-10-29 15:29:18 -0400
+Processing by CandiesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mCandy Load (0.1ms)[0m  [1m[34mSELECT "candies".* FROM "candies" WHERE "candies"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/candies_controller.rb:8:in `show'
+  Rendering candies/show.html.erb within layouts/application
+  Rendered candies/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 49)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.1ms | Allocations: 4462)
+
+
+Started GET "/candies/routes" for ::1 at 2020-10-29 15:30:30 -0400
+Processing by CandiesController#show as HTML
+  Parameters: {"id"=>"routes"}
+  [1m[36mCandy Load (0.1ms)[0m  [1m[34mSELECT "candies".* FROM "candies" WHERE "candies"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/candies_controller.rb:8:in `show'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms | Allocations: 1090)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Candy with 'id'=routes):
+  
+app/controllers/candies_controller.rb:8:in `show'
+Started GET "/candies/rails/routes" for ::1 at 2020-10-29 15:31:05 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/candies/rails/routes"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/candies" for ::1 at 2020-10-29 15:31:46 -0400
+Processing by CandiesController#index as HTML
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.1ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:3
+  Rendered candies/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1355)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.1ms | Allocations: 6161)
+
+
+Started GET "/candies/new" for ::1 at 2020-10-29 15:31:48 -0400
+Processing by CandiesController#new as HTML
+  Rendering candies/new.html.erb within layouts/application
+  Rendered candies/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 849)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 4846)
+
+
+Started GET "/candies/new" for ::1 at 2020-10-29 15:32:00 -0400
+Processing by CandiesController#new as HTML
+  Rendering candies/new.html.erb within layouts/application
+  Rendered candies/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 551)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.0ms | Allocations: 4410)
+
+
+Started GET "/candies/new" for ::1 at 2020-10-29 15:32:04 -0400
+Processing by CandiesController#new as HTML
+  Rendering candies/new.html.erb within layouts/application
+  Rendered candies/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 551)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 4413)
+
+
+Started GET "/rails/routes" for ::1 at 2020-10-29 15:32:24 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/rails/routes"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/candies" for ::1 at 2020-10-29 15:59:57 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CandiesController#index as HTML
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:2:in `sort'
+  Rendered candies/index.html.erb within layouts/application (Duration: 7.7ms | Allocations: 7376)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 20.2ms | ActiveRecord: 0.2ms | Allocations: 12469)
+
+
+Started GET "/candies" for ::1 at 2020-10-29 16:01:46 -0400
+Processing by CandiesController#index as HTML
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:3:in `sort'
+  Rendered candies/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 3009)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.2ms | Allocations: 7807)
+
+
+Started PUT "/candies" for ::1 at 2020-10-29 16:03:25 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [PUT] "/candies"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started PUT "/candies" for ::1 at 2020-10-29 16:03:58 -0400
+  
+ActionController::RoutingError (No route matches [PUT] "/candies"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/candies" for ::1 at 2020-10-29 16:04:01 -0400
+Processing by CandiesController#index as HTML
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.4ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:3:in `sort'
+  Rendered candies/index.html.erb within layouts/application (Duration: 10.5ms | Allocations: 7754)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 18.7ms | ActiveRecord: 0.9ms | Allocations: 12848)
+
+
+Started GET "/candies?name=%23%3CCandy%3A0x00007f80dc567638%3E+%23%3CCandy%3A0x00007f80dbd46080%3E+%23%3CCandy%3A0x00007f80dbd45f90%3E+%23%3CCandy%3A0x00007f80dbd45ec8%3E+%23%3CCandy%3A0x00007f80dbd45e00%3E+%23%3CCandy%3A0x00007f80dbd454f0%3E+%23%3CCandy%3A0x00007f80dbd45360%3E+%23%3CCandy%3A0x00007f80dbd451f8%3E+%23%3CCandy%3A0x00007f80dbd450b8%3E+%23%3CCandy%3A0x00007f80dbd44fa0%3E+%23%3CCandy%3A0x00007f80dbd44e60%3E+%23%3CCandy%3A0x00007f80dbd44cf8%3E+%23%3CCandy%3A0x00007f80dbd44b18%3E+%23%3CCandy%3A0x00007f80dbd449b0%3E+%23%3CCandy%3A0x00007f80dbd44898%3E&commit=Enter" for ::1 at 2020-10-29 16:04:03 -0400
+Processing by CandiesController#index as HTML
+  Parameters: {"name"=>"#<Candy:0x00007f80dc567638> #<Candy:0x00007f80dbd46080> #<Candy:0x00007f80dbd45f90> #<Candy:0x00007f80dbd45ec8> #<Candy:0x00007f80dbd45e00> #<Candy:0x00007f80dbd454f0> #<Candy:0x00007f80dbd45360> #<Candy:0x00007f80dbd451f8> #<Candy:0x00007f80dbd450b8> #<Candy:0x00007f80dbd44fa0> #<Candy:0x00007f80dbd44e60> #<Candy:0x00007f80dbd44cf8> #<Candy:0x00007f80dbd44b18> #<Candy:0x00007f80dbd449b0> #<Candy:0x00007f80dbd44898>", "commit"=>"Enter"}
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:3:in `sort'
+  Rendered candies/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 2691)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.2ms | Allocations: 6574)
+
+
+Started GET "/candies?name=%23%3CCandy%3A0x00007f80dc3577d0%3E+%23%3CCandy%3A0x00007f80dc35c3e8%3E+%23%3CCandy%3A0x00007f80dc367950%3E+%23%3CCandy%3A0x00007f80dc367090%3E+%23%3CCandy%3A0x00007f80dc3669d8%3E+%23%3CCandy%3A0x00007f80dc366190%3E+%23%3CCandy%3A0x00007f80dc365ad8%3E+%23%3CCandy%3A0x00007f80dc3650d8%3E+%23%3CCandy%3A0x00007f80dc364ed0%3E+%23%3CCandy%3A0x00007f80dc3649d0%3E+%23%3CCandy%3A0x00007f80dc3643e0%3E+%23%3CCandy%3A0x00007f80d8267ce8%3E+%23%3CCandy%3A0x00007f80d8267360%3E+%23%3CCandy%3A0x00007f80d8266ff0%3E+%23%3CCandy%3A0x00007f80d8266578%3E&commit=Enter" for ::1 at 2020-10-29 16:05:07 -0400
+Processing by CandiesController#index as HTML
+  Parameters: {"name"=>"#<Candy:0x00007f80dc3577d0> #<Candy:0x00007f80dc35c3e8> #<Candy:0x00007f80dc367950> #<Candy:0x00007f80dc367090> #<Candy:0x00007f80dc3669d8> #<Candy:0x00007f80dc366190> #<Candy:0x00007f80dc365ad8> #<Candy:0x00007f80dc3650d8> #<Candy:0x00007f80dc364ed0> #<Candy:0x00007f80dc3649d0> #<Candy:0x00007f80dc3643e0> #<Candy:0x00007f80d8267ce8> #<Candy:0x00007f80d8267360> #<Candy:0x00007f80d8266ff0> #<Candy:0x00007f80d8266578>", "commit"=>"Enter"}
+  Rendering candies/index.html.erb within layouts/application
+  Rendered candies/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 2223)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 3384)
+
+
+  
+ActionView::Template::Error (undefined method `sort' for "Candy":String):
+    1: <%= form_tag candies_path, method: "get" do %>
+    2:   <%=label_tag "Sort by Name"%>
+    3:   <%= radio_button_tag :name, @candies.name.sort %>
+    4:   <%=submit_tag "Enter"%>
+    5: <% end %>
+    6: 
+  
+app/views/candies/index.html.erb:3
+app/views/candies/index.html.erb:1
+Started GET "/candies?name=%23%3CCandy%3A0x00007f80dc3577d0%3E+%23%3CCandy%3A0x00007f80dc35c3e8%3E+%23%3CCandy%3A0x00007f80dc367950%3E+%23%3CCandy%3A0x00007f80dc367090%3E+%23%3CCandy%3A0x00007f80dc3669d8%3E+%23%3CCandy%3A0x00007f80dc366190%3E+%23%3CCandy%3A0x00007f80dc365ad8%3E+%23%3CCandy%3A0x00007f80dc3650d8%3E+%23%3CCandy%3A0x00007f80dc364ed0%3E+%23%3CCandy%3A0x00007f80dc3649d0%3E+%23%3CCandy%3A0x00007f80dc3643e0%3E+%23%3CCandy%3A0x00007f80d8267ce8%3E+%23%3CCandy%3A0x00007f80d8267360%3E+%23%3CCandy%3A0x00007f80d8266ff0%3E+%23%3CCandy%3A0x00007f80d8266578%3E&commit=Enter" for ::1 at 2020-10-29 16:07:02 -0400
+Processing by CandiesController#index as HTML
+  Parameters: {"name"=>"#<Candy:0x00007f80dc3577d0> #<Candy:0x00007f80dc35c3e8> #<Candy:0x00007f80dc367950> #<Candy:0x00007f80dc367090> #<Candy:0x00007f80dc3669d8> #<Candy:0x00007f80dc366190> #<Candy:0x00007f80dc365ad8> #<Candy:0x00007f80dc3650d8> #<Candy:0x00007f80dc364ed0> #<Candy:0x00007f80dc3649d0> #<Candy:0x00007f80dc3643e0> #<Candy:0x00007f80d8267ce8> #<Candy:0x00007f80d8267360> #<Candy:0x00007f80d8266ff0> #<Candy:0x00007f80d8266578>", "commit"=>"Enter"}
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.1ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:9
+  Rendered candies/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 3623)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.1ms | Allocations: 4784)
+
+
+  
+ActionView::Template::Error (undefined method `sort' for #<Candy:0x00007f80dbc7e3c8>):
+    10: <li><%=link_to candy.name, candy_path(candy.id)%></li>
+    11: <%= form_tag candies_path, method: "get" do %>
+    12:   <%=label_tag "Sort by Name"%>
+    13:   <%= radio_button_tag :name, candy.sort %>
+    14:   <%=submit_tag "Enter"%>
+    15: <% end %>
+    16: <%end%>
+  
+app/views/candies/index.html.erb:13
+app/views/candies/index.html.erb:11
+app/views/candies/index.html.erb:9
+Started GET "/" for ::1 at 2020-10-29 16:07:09 -0400
+Processing by ApplicationController#home as HTML
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 1.5ms | Allocations: 85)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.0ms | Allocations: 4411)
+
+
+Started GET "/candies" for ::1 at 2020-10-29 16:07:13 -0400
+Processing by CandiesController#index as HTML
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.1ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:9
+  Rendered candies/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 3285)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms | Allocations: 3702)
+
+
+  
+ActionView::Template::Error (undefined method `sort' for #<Candy:0x00007f80daa63c10>):
+    10: <li><%=link_to candy.name, candy_path(candy.id)%></li>
+    11: <%= form_tag candies_path, method: "get" do %>
+    12:   <%=label_tag "Sort by Name"%>
+    13:   <%= radio_button_tag :name, candy.sort %>
+    14:   <%=submit_tag "Enter"%>
+    15: <% end %>
+    16: <%end%>
+  
+app/views/candies/index.html.erb:13
+app/views/candies/index.html.erb:11
+app/views/candies/index.html.erb:9
+Started GET "/candies" for ::1 at 2020-10-29 16:08:10 -0400
+Processing by CandiesController#index as HTML
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Candy Load (0.0ms)[0m  [1m[34mSELECT "candies".* FROM "candies" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Candy Load (0.0ms)[0m  [1m[34mSELECT "candies".* FROM "candies" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Candy Load (0.0ms)[0m  [1m[34mSELECT "candies".* FROM "candies" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Candy Load (0.0ms)[0m  [1m[34mSELECT "candies".* FROM "candies" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Candy Load (0.0ms)[0m  [1m[34mSELECT "candies".* FROM "candies" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Candy Load (0.0ms)[0m  [1m[34mSELECT "candies".* FROM "candies" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Candy Load (0.0ms)[0m  [1m[34mSELECT "candies".* FROM "candies" LIMIT ?[0m  [["LIMIT", 11]]
+  Rendered candies/index.html.erb within layouts/application (Duration: 302.4ms | Allocations: 166771)
+Completed 500 Internal Server Error in 304ms (ActiveRecord: 0.3ms | Allocations: 167927)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `candy' for #<#<Class:0x00007f80db95be48>:0x00007f80dc2f2ee8>
+Did you mean?  and):
+    1: <%= form_tag candies_path, method: "get" do %>
+    2:   <%=label_tag "Sort by Name"%>
+    3:   <%= radio_button_tag :name, candy.sort %>
+    4:   <%=submit_tag "Enter"%>
+    5: <% end %>
+    6: 
+  
+app/views/candies/index.html.erb:3
+app/views/candies/index.html.erb:1
+Started GET "/candies" for ::1 at 2020-10-29 16:11:11 -0400
+Processing by CandiesController#index as HTML
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:3:in `sort_by'
+  Rendered candies/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 2041)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms | Allocations: 3197)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 2..4)):
+    1: <%= form_tag candies_path, method: "get" do %>
+    2:   <%=label_tag "Sort by Name"%>
+    3:   <%= radio_button_tag @candies.sort_by { |candy| [candy.name] } %>
+    4:   <%=submit_tag "Enter"%>
+    5: <% end %>
+    6: 
+  
+app/views/candies/index.html.erb:3
+app/views/candies/index.html.erb:1
+Started GET "/candies" for ::1 at 2020-10-29 16:12:26 -0400
+Processing by CandiesController#index as HTML
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.1ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:3:in `sort_by'
+  Rendered candies/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 2950)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.1ms | Allocations: 4106)
+
+
+  
+ActionView::Template::Error (undefined method `second' for "Caramel":String
+Did you mean?  send):
+    1: <%= form_tag candies_path, method: "get" do %>
+    2:   <%=label_tag "Sort by Name"%>
+    3:   <%= radio_button_tag @candies.sort_by { |candy| [candy.name.first, candy.name.second] } %>
+    4:   <%=submit_tag "Enter"%>
+    5: <% end %>
+    6: 
+  
+app/views/candies/index.html.erb:3
+app/views/candies/index.html.erb:3:in `sort_by'
+app/views/candies/index.html.erb:3
+app/views/candies/index.html.erb:1
+Started GET "/candies" for ::1 at 2020-10-29 16:13:03 -0400
+Processing by CandiesController#index as HTML
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:3:in `sort_by'
+  Rendered candies/index.html.erb within layouts/application (Duration: 5.5ms | Allocations: 3551)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms | Allocations: 4707)
+
+
+  
+ActionView::Template::Error (undefined method `first' for #<Candy:0x00007f80dbd242f0>):
+    1: <%= form_tag candies_path, method: "get" do %>
+    2:   <%=label_tag "Sort by Name"%>
+    3:   <%= radio_button_tag @candies.sort_by { |candy| [candy.first.name, candy.second.name] } %>
+    4:   <%=submit_tag "Enter"%>
+    5: <% end %>
+    6: 
+  
+app/views/candies/index.html.erb:3
+app/views/candies/index.html.erb:3:in `sort_by'
+app/views/candies/index.html.erb:3
+app/views/candies/index.html.erb:1
+Started GET "/candies" for ::1 at 2020-10-29 16:14:36 -0400
+Processing by CandiesController#index as HTML
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.1ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:3:in `sort_by'
+  Rendered candies/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 3519)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.1ms | Allocations: 4675)
+
+
+  
+ActionView::Template::Error (undefined method `first' for #<Candy:0x00007f80d85db460>):
+    1: <%= form_tag candies_path, method: "get" do %>
+    2:   <%=label_tag "Sort by Name"%>
+    3:   <%= radio_button_tag @candies.sort_by { |candies| [candies.first.name, candies.second.name] } %>
+    4:   <%=submit_tag "Enter"%>
+    5: <% end %>
+    6: 
+  
+app/views/candies/index.html.erb:3
+app/views/candies/index.html.erb:3:in `sort_by'
+app/views/candies/index.html.erb:3
+app/views/candies/index.html.erb:1
+Started GET "/candies" for ::1 at 2020-10-29 16:18:00 -0400
+Processing by CandiesController#index as HTML
+  Rendering candies/index.html.erb within layouts/application
+  Rendered candies/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1241)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2397)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 2..4)):
+    1: <%= form_tag candies_path, method: "get" do %>
+    2:   <%=label_tag "Sort by Name"%>
+    3:   <%= radio_button_tag @candies.order(:name) %>
+    4:   <%=submit_tag "Enter"%>
+    5: <% end %>
+    6: 
+  
+app/views/candies/index.html.erb:3
+app/views/candies/index.html.erb:1
+Started GET "/candies" for ::1 at 2020-10-29 16:22:12 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CandiesController#index as HTML
+  Rendering candies/index.html.erb within layouts/application
+  Rendered candies/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 1172)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2663)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 2..4)):
+    1: <%= form_tag candies_path, method: "get" do %>
+    2:   <%=label_tag "Sort by Name"%>
+    3:   <%= radio_button_tag @sorted_candies %>
+    4:   <%=submit_tag "Enter"%>
+    5: <% end %>
+    6: 
+  
+app/views/candies/index.html.erb:3
+app/views/candies/index.html.erb:1
+Started GET "/candies" for ::1 at 2020-10-29 16:24:22 -0400
+Processing by CandiesController#index as HTML
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:9
+  Rendered candies/index.html.erb within layouts/application (Duration: 7.6ms | Allocations: 6452)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 18.4ms | ActiveRecord: 0.6ms | Allocations: 11252)
+
+
+Started GET "/candies?sort_by_name=true&commit=Enter" for ::1 at 2020-10-29 16:24:26 -0400
+Processing by CandiesController#index as HTML
+  Parameters: {"sort_by_name"=>"true", "commit"=>"Enter"}
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.1ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:9
+  Rendered candies/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1372)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.1ms | Allocations: 5247)
+
+
+Started GET "/candies?sort_by_name=true&commit=Enter" for ::1 at 2020-10-29 16:24:32 -0400
+Processing by CandiesController#index as HTML
+  Parameters: {"sort_by_name"=>"true", "commit"=>"Enter"}
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:9
+  Rendered candies/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1365)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.2ms | Allocations: 5240)
+
+
+Started GET "/candies?sort_by_name=true&commit=Enter" for ::1 at 2020-10-29 16:24:53 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CandiesController#index as HTML
+  Parameters: {"sort_by_name"=>"true", "commit"=>"Enter"}
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:9
+  Rendered candies/index.html.erb within layouts/application (Duration: 8.6ms | Allocations: 6167)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 13.1ms | ActiveRecord: 0.8ms | Allocations: 10483)
+
+
+Started GET "/candies?sort_by_name=true&commit=Enter" for ::1 at 2020-10-29 16:24:55 -0400
+Processing by CandiesController#index as HTML
+  Parameters: {"sort_by_name"=>"true", "commit"=>"Enter"}
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.1ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:9
+  Rendered candies/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1365)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.1ms | Allocations: 5243)
+
+
+Started GET "/candies?commit=Enter" for ::1 at 2020-10-29 16:24:58 -0400
+Processing by CandiesController#index as HTML
+  Parameters: {"commit"=>"Enter"}
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.3ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:9
+  Rendered candies/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1365)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.3ms | Allocations: 5238)
+
+
+Started GET "/candies?sort_by_name=true&commit=Enter" for ::1 at 2020-10-29 16:25:22 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CandiesController#index as HTML
+  Parameters: {"sort_by_name"=>"true", "commit"=>"Enter"}
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.3ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:9
+  Rendered candies/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 6167)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 9.9ms | ActiveRecord: 0.7ms | Allocations: 10529)
+
+
+Started GET "/candies?sort_by_name=true&commit=Enter" for ::1 at 2020-10-29 16:25:43 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CandiesController#index as HTML
+  Parameters: {"sort_by_name"=>"true", "commit"=>"Enter"}
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:9
+  Rendered candies/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 6200)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.6ms | Allocations: 10519)
+
+
+Started GET "/candies?sort_by_name=true&commit=Enter" for ::1 at 2020-10-29 16:25:44 -0400
+Processing by CandiesController#index as HTML
+  Parameters: {"sort_by_name"=>"true", "commit"=>"Enter"}
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.1ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:9
+  Rendered candies/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1365)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.1ms | Allocations: 5239)
+
+
+Started GET "/candies?sort_by_name=true&commit=Enter" for ::1 at 2020-10-29 16:30:39 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CandiesController#index as HTML
+  Parameters: {"sort_by_name"=>"true", "commit"=>"Enter"}
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:9
+  Rendered candies/index.html.erb within layouts/application (Duration: 9.1ms | Allocations: 6409)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 19.6ms | ActiveRecord: 0.7ms | Allocations: 11497)
+
+
+Started GET "/candies" for ::1 at 2020-10-29 16:32:53 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CandiesController#index as HTML
+Started GET "/candies?sort_by_name=name&commit=Enter" for ::1 at 2020-10-29 16:35:43 -0400
+Completed 500 Internal Server Error in 169637ms (ActiveRecord: 0.0ms | Allocations: 248998)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `index'
+app/controllers/candies_controller.rb:6:in `index'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CandiesController#index as HTML
+  Parameters: {"sort_by_name"=>"name", "commit"=>"Enter"}
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (1.3ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:9
+  Rendered candies/index.html.erb within layouts/application (Duration: 133.4ms | Allocations: 1236528)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 209ms (Views: 178.6ms | ActiveRecord: 10.2ms | Allocations: 1950782)
+
+
+Started GET "/candies" for ::1 at 2020-10-29 16:36:09 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CandiesController#index as HTML
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.3ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:9
+  Rendered candies/index.html.erb within layouts/application (Duration: 12.3ms | Allocations: 7324)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 56ms (Views: 47.5ms | ActiveRecord: 0.7ms | Allocations: 15466)
+
+
+Started GET "/candies?sort_by_name=name&commit=Enter" for ::1 at 2020-10-29 16:36:15 -0400
+Processing by CandiesController#index as HTML
+  Parameters: {"sort_by_name"=>"name", "commit"=>"Enter"}
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:9
+  Rendered candies/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1382)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.2ms | Allocations: 5269)
+
+
+Started GET "/candies" for ::1 at 2020-10-29 16:37:26 -0400
+Processing by CandiesController#index as HTML
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.3ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:9
+  Rendered candies/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1625)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.3ms | Allocations: 6442)
+
+
+Started GET "/candies/sort?sort_by_name=name&commit=Enter" for ::1 at 2020-10-29 16:37:29 -0400
+Processing by CandiesController#show as HTML
+  Parameters: {"sort_by_name"=>"name", "commit"=>"Enter", "id"=>"sort"}
+  [1m[36mCandy Load (0.1ms)[0m  [1m[34mSELECT "candies".* FROM "candies" WHERE "candies"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/candies_controller.rb:8:in `show'
+Completed 404 Not Found in 10ms (ActiveRecord: 0.1ms | Allocations: 3414)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Candy with 'id'=sort):
+  
+app/controllers/candies_controller.rb:8:in `show'
+Started GET "/candies/sort?sort_by_name=name&commit=Enter" for ::1 at 2020-10-29 16:38:29 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CandiesController#sort_by_name as HTML
+  Parameters: {"sort_by_name"=>"name", "commit"=>"Enter"}
+Redirected to http://localhost:3000/candies
+Completed 302 Found in 10ms (ActiveRecord: 0.2ms | Allocations: 1223)
+
+
+Started GET "/candies" for ::1 at 2020-10-29 16:38:29 -0400
+Processing by CandiesController#index as HTML
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:9
+  Rendered candies/index.html.erb within layouts/application (Duration: 7.9ms | Allocations: 5731)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.6ms | Allocations: 9791)
+
+
+Started GET "/candies/sort?sort_by_name=name&commit=Enter" for ::1 at 2020-10-29 16:38:32 -0400
+Processing by CandiesController#sort_by_name as HTML
+  Parameters: {"sort_by_name"=>"name", "commit"=>"Enter"}
+Redirected to http://localhost:3000/candies
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/candies" for ::1 at 2020-10-29 16:38:32 -0400
+Processing by CandiesController#index as HTML
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:9
+  Rendered candies/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1365)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.2ms | Allocations: 5241)
+
+
+Started GET "/candies" for ::1 at 2020-10-29 16:39:23 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CandiesController#index as HTML
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:9
+  Rendered candies/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 6173)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 10.7ms | ActiveRecord: 0.5ms | Allocations: 10497)
+
+
+Started GET "/candies/sort?sort_by_name=name&commit=Enter" for ::1 at 2020-10-29 16:39:25 -0400
+Processing by CandiesController#sort_by_name as HTML
+  Parameters: {"sort_by_name"=>"name", "commit"=>"Enter"}
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies" ORDER BY "candies"."name" ASC[0m
+  ↳ app/views/candies/index.html.erb:9
+  Rendered candies/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1389)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.2ms | Allocations: 5249)
+
+
+Started GET "/candies/sort?sort_by_name=name&commit=Enter" for ::1 at 2020-10-29 16:40:32 -0400
+Processing by CandiesController#sort_by_name as HTML
+  Parameters: {"sort_by_name"=>"name", "commit"=>"Enter"}
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies" ORDER BY "candies"."name" ASC[0m
+  ↳ app/views/candies/index.html.erb:9
+  Rendered candies/index.html.erb within layouts/application (Duration: 9.4ms | Allocations: 1369)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.2ms | Allocations: 5233)
+
+
+Started GET "/candies" for ::1 at 2020-10-29 16:40:37 -0400
+Processing by CandiesController#index as HTML
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:9
+  Rendered candies/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1365)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.2ms | Allocations: 5241)
+
+
+Started GET "/candies" for ::1 at 2020-10-29 16:44:24 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CandiesController#index as HTML
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:11
+  Rendered candies/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 6570)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 12.2ms | ActiveRecord: 0.5ms | Allocations: 11661)
+
+
+Started GET "/candies/sort?sort_by=calories&commit=Enter" for ::1 at 2020-10-29 16:44:31 -0400
+Processing by CandiesController#sort_by as HTML
+  Parameters: {"sort_by"=>"calories", "commit"=>"Enter"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 959)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/candies_controller.rb:26:in `sort_by'
+Started GET "/candies/sort?sort_by=name&commit=Enter" for ::1 at 2020-10-29 16:44:40 -0400
+Processing by CandiesController#sort_by as HTML
+  Parameters: {"sort_by"=>"name", "commit"=>"Enter"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 949)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/candies_controller.rb:26:in `sort_by'
+Started GET "/candies/sort?sort_by=name&commit=Enter" for ::1 at 2020-10-29 16:45:38 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CandiesController#sort_by as HTML
+  Parameters: {"sort_by"=>"name", "commit"=>"Enter"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 928)
+
+
+  
+ArgumentError (Direction "" is invalid. Valid directions are: [:asc, :desc, :ASC, :DESC, "asc", "desc", "ASC", "DESC"]):
+  
+app/controllers/candies_controller.rb:26:in `sort_by'
+Started GET "/candies" for ::1 at 2020-10-29 16:45:41 -0400
+Processing by CandiesController#index as HTML
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.3ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:11
+  Rendered candies/index.html.erb within layouts/application (Duration: 8.5ms | Allocations: 6308)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 12.3ms | ActiveRecord: 1.4ms | Allocations: 10338)
+
+
+Started GET "/candies/sort?sort_by=name&commit=Enter" for ::1 at 2020-10-29 16:45:44 -0400
+Processing by CandiesController#sort_by as HTML
+  Parameters: {"sort_by"=>"name", "commit"=>"Enter"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 646)
+
+
+  
+ArgumentError (Direction "" is invalid. Valid directions are: [:asc, :desc, :ASC, :DESC, "asc", "desc", "ASC", "DESC"]):
+  
+app/controllers/candies_controller.rb:26:in `sort_by'
+Started GET "/candies/sort?sort_by=name&commit=Enter" for ::1 at 2020-10-29 16:47:10 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/Users/jacobkagon/Flatiron/code/candy_store/candy_store/app/controllers/candies_controller.rb:26: syntax error, unexpected ')', expecting =>
+...rder(name: params[:name], :asc)
+...                              ^):
+  
+app/controllers/candies_controller.rb:26: syntax error, unexpected ')', expecting =>
+app/controllers/candies_controller.rb:26: syntax error, unexpected ')', expecting =>
+app/controllers/candies_controller.rb:26: syntax error, unexpected ')', expecting =>
+Started GET "/candies/sort?sort_by=name&commit=Enter" for ::1 at 2020-10-29 16:48:29 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CandiesController#sort_by as HTML
+  Parameters: {"sort_by"=>"name", "commit"=>"Enter"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 937)
+
+
+  
+ArgumentError (Direction "" is invalid. Valid directions are: [:asc, :desc, :ASC, :DESC, "asc", "desc", "ASC", "DESC"]):
+  
+app/controllers/candies_controller.rb:26:in `sort_by'
+Started GET "/candies" for ::1 at 2020-10-29 16:48:32 -0400
+Processing by CandiesController#index as HTML
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:11
+  Rendered candies/index.html.erb within layouts/application (Duration: 8.6ms | Allocations: 6291)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 1.5ms | Allocations: 10327)
+
+
+Started GET "/candies/sort?sort_by=calories&commit=Enter" for ::1 at 2020-10-29 16:48:34 -0400
+Processing by CandiesController#sort_by as HTML
+  Parameters: {"sort_by"=>"calories", "commit"=>"Enter"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 642)
+
+
+  
+ArgumentError (Direction "" is invalid. Valid directions are: [:asc, :desc, :ASC, :DESC, "asc", "desc", "ASC", "DESC"]):
+  
+app/controllers/candies_controller.rb:26:in `sort_by'
+Started GET "/" for ::1 at 2020-10-29 16:52:17 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ApplicationController#home as HTML
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.8ms | Allocations: 88)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 4185)
+
+
+Started GET "/candies" for ::1 at 2020-10-29 16:52:19 -0400
+Processing by CandiesController#index as HTML
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:11
+  Rendered candies/index.html.erb within layouts/application (Duration: 9.8ms | Allocations: 6291)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 15.0ms | ActiveRecord: 0.8ms | Allocations: 10653)
+
+
+Started GET "/candies/6" for ::1 at 2020-10-29 16:52:22 -0400
+Processing by CandiesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies" WHERE "candies"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/candies_controller.rb:8:in `show'
+  Rendering candies/show.html.erb within layouts/application
+  Rendered candies/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 228)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 8.1ms | ActiveRecord: 0.2ms | Allocations: 4910)
+
+
+Started GET "/candies/new" for ::1 at 2020-10-29 16:52:25 -0400
+Processing by CandiesController#new as HTML
+  Rendering candies/new.html.erb within layouts/application
+  Rendered candies/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 866)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 0.0ms | Allocations: 4868)
+
+
+Started GET "/candies/sort?sort_by=name&commit=Enter" for ::1 at 2020-10-29 16:52:28 -0400
+Processing by CandiesController#sort_by as HTML
+  Parameters: {"sort_by"=>"name", "commit"=>"Enter"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 646)
+
+
+  
+ArgumentError (Direction "" is invalid. Valid directions are: [:asc, :desc, :ASC, :DESC, "asc", "desc", "ASC", "DESC"]):
+  
+app/controllers/candies_controller.rb:26:in `sort_by'
+Started GET "/candies/sort?sort_by=name&commit=Enter" for ::1 at 2020-10-29 16:53:04 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CandiesController#sort_by as HTML
+  Parameters: {"sort_by"=>"name", "commit"=>"Enter"}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 3583)
+
+
+  
+NoMethodError (undefined method `sort_by' for #<Class:0x00007fc81dc242b8>):
+  
+app/controllers/candies_controller.rb:26:in `sort_by'
+Started GET "/candies/sort?sort_by=name&commit=Enter" for ::1 at 2020-10-29 16:53:20 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CandiesController#sort_by as HTML
+  Parameters: {"sort_by"=>"name", "commit"=>"Enter"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 3638)
+
+
+  
+NoMethodError (undefined method `sort' for #<Class:0x00007fc81d567920>):
+  
+app/controllers/candies_controller.rb:26:in `sort_by'
+Started GET "/candies/sort?sort_by=name&commit=Enter" for ::1 at 2020-10-29 16:55:28 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/Users/jacobkagon/Flatiron/code/candy_store/candy_store/app/controllers/candies_controller.rb:27: syntax error, unexpected ':', expecting ')'
+...  calories: params[:calories] :desc)
+...                              ^):
+  
+app/controllers/candies_controller.rb:27: syntax error, unexpected ':', expecting ')'
+app/controllers/candies_controller.rb:27: syntax error, unexpected ':', expecting ')'
+app/controllers/candies_controller.rb:27: syntax error, unexpected ':', expecting ')'
+Started GET "/candies/sort?sort_by=name&commit=Enter" for ::1 at 2020-10-29 16:56:08 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/Users/jacobkagon/Flatiron/code/candy_store/candy_store/app/controllers/candies_controller.rb:27: syntax error, unexpected ':', expecting end
+... calories: params[:calories]) :desc
+...                              ^):
+  
+app/controllers/candies_controller.rb:27: syntax error, unexpected ':', expecting end
+app/controllers/candies_controller.rb:27: syntax error, unexpected ':', expecting end
+app/controllers/candies_controller.rb:27: syntax error, unexpected ':', expecting end
+Started GET "/candies/sort?sort_by=name&commit=Enter" for ::1 at 2020-10-29 16:56:33 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/Users/jacobkagon/Flatiron/code/candy_store/candy_store/app/controllers/candies_controller.rb:27: syntax error, unexpected ':', expecting end
+... calories: params[:calories]) :desc
+...                              ^
+/Users/jacobkagon/Flatiron/code/candy_store/candy_store/app/controllers/candies_controller.rb:34: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/candies_controller.rb:27: syntax error, unexpected ':', expecting end
+app/controllers/candies_controller.rb:34: syntax error, unexpected end, expecting end-of-input
+app/controllers/candies_controller.rb:27: syntax error, unexpected ':', expecting end
+app/controllers/candies_controller.rb:34: syntax error, unexpected end, expecting end-of-input
+app/controllers/candies_controller.rb:27: syntax error, unexpected ':', expecting end
+app/controllers/candies_controller.rb:34: syntax error, unexpected end, expecting end-of-input
+Started GET "/candies/sort?sort_by=name&commit=Enter" for ::1 at 2020-10-29 16:58:43 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CandiesController#sort_by as HTML
+  Parameters: {"sort_by"=>"name", "commit"=>"Enter"}
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies" ORDER BY "candies"."name" ASC[0m
+  ↳ app/views/candies/index.html.erb:11
+  Rendered candies/index.html.erb within layouts/application (Duration: 14.7ms | Allocations: 5817)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 19.8ms | ActiveRecord: 0.9ms | Allocations: 10651)
+
+
+Started GET "/candies/sort?sort_by=name&commit=Enter" for ::1 at 2020-10-29 16:58:46 -0400
+Processing by CandiesController#sort_by as HTML
+  Parameters: {"sort_by"=>"name", "commit"=>"Enter"}
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies" ORDER BY "candies"."name" ASC[0m
+  ↳ app/views/candies/index.html.erb:11
+  Rendered candies/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1457)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.2ms | Allocations: 5318)
+
+
+Started GET "/candies" for ::1 at 2020-10-29 16:58:57 -0400
+Processing by CandiesController#index as HTML
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:11
+  Rendered candies/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1474)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.2ms | Allocations: 5348)
+
+
+Started GET "/candies/sort?sort_by=name&commit=Enter" for ::1 at 2020-10-29 16:59:00 -0400
+Processing by CandiesController#sort_by as HTML
+  Parameters: {"sort_by"=>"name", "commit"=>"Enter"}
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies" ORDER BY "candies"."name" ASC[0m
+  ↳ app/views/candies/index.html.erb:11
+  Rendered candies/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1457)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.2ms | Allocations: 5321)
+
+
+Started GET "/candies/sort?sort_by=name&commit=Enter" for ::1 at 2020-10-29 16:59:34 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CandiesController#sort_by as HTML
+  Parameters: {"sort_by"=>"name", "commit"=>"Enter"}
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:11
+  Rendered candies/index.html.erb within layouts/application (Duration: 8.5ms | Allocations: 6261)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 13.6ms | ActiveRecord: 0.8ms | Allocations: 10573)
+
+
+Started GET "/candies/sort?sort_by=name&commit=Enter" for ::1 at 2020-10-29 16:59:36 -0400
+Processing by CandiesController#sort_by as HTML
+  Parameters: {"sort_by"=>"name", "commit"=>"Enter"}
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:11
+  Rendered candies/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1453)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.2ms | Allocations: 5327)
+
+
+Started GET "/candies/sort?commit=Enter" for ::1 at 2020-10-29 16:59:40 -0400
+Processing by CandiesController#sort_by as HTML
+  Parameters: {"commit"=>"Enter"}
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.1ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:11
+  Rendered candies/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1453)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.1ms | Allocations: 5321)
+
+
+Started GET "/candies/sort?sort_by=name&commit=Enter" for ::1 at 2020-10-29 16:59:42 -0400
+Processing by CandiesController#sort_by as HTML
+  Parameters: {"sort_by"=>"name", "commit"=>"Enter"}
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.1ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:11
+  Rendered candies/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1453)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.1ms | Allocations: 5330)
+
+
+Started GET "/candies/sort?sort_by=calories&commit=Enter" for ::1 at 2020-10-29 16:59:56 -0400
+Processing by CandiesController#sort_by as HTML
+  Parameters: {"sort_by"=>"calories", "commit"=>"Enter"}
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.6ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:11
+  Rendered candies/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1453)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.6ms | Allocations: 5325)
+
+
+Started GET "/candies/sort?commit=Enter" for ::1 at 2020-10-29 16:59:57 -0400
+Processing by CandiesController#sort_by as HTML
+  Parameters: {"commit"=>"Enter"}
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:11
+  Rendered candies/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1453)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.2ms | Allocations: 5326)
+
+
+Started GET "/candies/sort?commit=Enter" for ::1 at 2020-10-29 17:00:30 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CandiesController#sort_by as HTML
+  Parameters: {"commit"=>"Enter"}
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies" ORDER BY "candies"."calories" ASC[0m
+  ↳ app/views/candies/index.html.erb:11
+  Rendered candies/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 5744)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 10.6ms | ActiveRecord: 0.7ms | Allocations: 10593)
+
+
+Started GET "/candies/sort?sort_by=calories&commit=Enter" for ::1 at 2020-10-29 17:00:36 -0400
+Processing by CandiesController#sort_by as HTML
+  Parameters: {"sort_by"=>"calories", "commit"=>"Enter"}
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies" ORDER BY "candies"."calories" ASC[0m
+  ↳ app/views/candies/index.html.erb:11
+  Rendered candies/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1457)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.2ms | Allocations: 5348)
+
+
+Started GET "/candies/sort?sort_by=calories&commit=Enter" for ::1 at 2020-10-29 17:00:53 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CandiesController#sort_by as HTML
+  Parameters: {"sort_by"=>"calories", "commit"=>"Enter"}
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.1ms)[0m  [1m[34mSELECT "candies".* FROM "candies" ORDER BY "candies"."calories" ASC[0m
+  ↳ app/views/candies/index.html.erb:11
+  Rendered candies/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 5773)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 11.6ms | ActiveRecord: 0.7ms | Allocations: 10647)
+
+
+Started GET "/candies/sort?sort_by=calories&commit=Enter" for ::1 at 2020-10-29 17:00:54 -0400
+Processing by CandiesController#sort_by as HTML
+  Parameters: {"sort_by"=>"calories", "commit"=>"Enter"}
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies" ORDER BY "candies"."calories" ASC[0m
+  ↳ app/views/candies/index.html.erb:11
+  Rendered candies/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1457)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.2ms | Allocations: 5321)
+
+
+Started GET "/candies" for ::1 at 2020-10-29 17:01:04 -0400
+Processing by CandiesController#index as HTML
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:11
+  Rendered candies/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1474)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.2ms | Allocations: 5346)
+
+
+Started GET "/candies/sort?sort_by=calories&commit=Enter" for ::1 at 2020-10-29 17:01:07 -0400
+Processing by CandiesController#sort_by as HTML
+  Parameters: {"sort_by"=>"calories", "commit"=>"Enter"}
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies" ORDER BY "candies"."calories" ASC[0m
+  ↳ app/views/candies/index.html.erb:11
+  Rendered candies/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1457)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.2ms | Allocations: 5319)
+
+
+Started GET "/candies/1" for ::1 at 2020-10-29 17:01:13 -0400
+Processing by CandiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies" WHERE "candies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/candies_controller.rb:8:in `show'
+  Rendering candies/show.html.erb within layouts/application
+  Rendered candies/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 53)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 7.9ms | ActiveRecord: 0.2ms | Allocations: 4575)
+
+
+Started GET "/candies/14" for ::1 at 2020-10-29 17:01:15 -0400
+Processing by CandiesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mCandy Load (0.1ms)[0m  [1m[34mSELECT "candies".* FROM "candies" WHERE "candies"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/candies_controller.rb:8:in `show'
+  Rendering candies/show.html.erb within layouts/application
+  Rendered candies/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 46)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 5.6ms | ActiveRecord: 0.1ms | Allocations: 4448)
+
+
+Started GET "/candies/6" for ::1 at 2020-10-29 17:01:17 -0400
+Processing by CandiesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCandy Load (0.1ms)[0m  [1m[34mSELECT "candies".* FROM "candies" WHERE "candies"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/candies_controller.rb:8:in `show'
+  Rendering candies/show.html.erb within layouts/application
+  Rendered candies/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 49)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 5.6ms | ActiveRecord: 0.1ms | Allocations: 4453)
+
+
+Started GET "/candies/sort?sort_by=calories&commit=Enter" for ::1 at 2020-10-29 17:01:46 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CandiesController#sort_by as HTML
+  Parameters: {"sort_by"=>"calories", "commit"=>"Enter"}
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies" ORDER BY "candies"."name" ASC[0m
+  ↳ app/views/candies/index.html.erb:11
+  Rendered candies/index.html.erb within layouts/application (Duration: 8.1ms | Allocations: 5741)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 12.4ms | ActiveRecord: 1.0ms | Allocations: 10596)
+
+
+Started GET "/candies" for ::1 at 2020-10-29 17:01:50 -0400
+Processing by CandiesController#index as HTML
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies"[0m
+  ↳ app/views/candies/index.html.erb:11
+  Rendered candies/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1474)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.2ms | Allocations: 5349)
+
+
+Started GET "/candies/sort?sort_by=calories&commit=Enter" for ::1 at 2020-10-29 17:01:51 -0400
+Processing by CandiesController#sort_by as HTML
+  Parameters: {"sort_by"=>"calories", "commit"=>"Enter"}
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies" ORDER BY "candies"."name" ASC[0m
+  ↳ app/views/candies/index.html.erb:11
+  Rendered candies/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1457)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.2ms | Allocations: 5355)
+
+
+Started GET "/candies/14" for ::1 at 2020-10-29 17:01:54 -0400
+Processing by CandiesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mCandy Load (0.3ms)[0m  [1m[34mSELECT "candies".* FROM "candies" WHERE "candies"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/candies_controller.rb:8:in `show'
+  Rendering candies/show.html.erb within layouts/application
+  Rendered candies/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 50)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 7.7ms | ActiveRecord: 0.3ms | Allocations: 4578)
+
+
+Started GET "/candies/1" for ::1 at 2020-10-29 17:01:56 -0400
+Processing by CandiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCandy Load (0.1ms)[0m  [1m[34mSELECT "candies".* FROM "candies" WHERE "candies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/candies_controller.rb:8:in `show'
+  Rendering candies/show.html.erb within layouts/application
+  Rendered candies/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 49)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 0.1ms | Allocations: 4454)
+
+
+Started GET "/candies/4" for ::1 at 2020-10-29 17:01:59 -0400
+Processing by CandiesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies" WHERE "candies"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/candies_controller.rb:8:in `show'
+  Rendering candies/show.html.erb within layouts/application
+  Rendered candies/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 49)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.2ms | Allocations: 4456)
+
+
+Started GET "/candies/sort?sort_by=calories&commit=Enter" for ::1 at 2020-10-29 17:02:12 -0400
+Processing by CandiesController#sort_by as HTML
+  Parameters: {"sort_by"=>"calories", "commit"=>"Enter"}
+  Rendering candies/index.html.erb within layouts/application
+  [1m[36mCandy Load (0.2ms)[0m  [1m[34mSELECT "candies".* FROM "candies" ORDER BY "candies"."name" ASC[0m
+  ↳ app/views/candies/index.html.erb:11
+  Rendered candies/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1457)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.2ms | Allocations: 5350)
+
+
+Started GET "/" for ::1 at 2020-10-29 17:02:23 -0400
+Processing by ApplicationController#home as HTML
+  Rendering application/home.html.erb within layouts/application
+  Rendered application/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 22.0ms | ActiveRecord: 0.0ms | Allocations: 4009)
+
+

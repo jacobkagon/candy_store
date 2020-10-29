@@ -1,0 +1,16 @@
+<%= form_tag sort_path, method: "get" do %>
+  <%=label_tag "Sort by Name"%>
+  <%= radio_button_tag :sort_by, "name" %>
+  <%=label_tag "Sort by Calories"%>
+  <%= radio_button_tag :sort_by, "calories" %>
+  <%=submit_tag "Enter"%>
+<% end %>
+
+<h1>Candy List</h1>
+<ul>
+<%@candies.each do |candy|%>
+<li><%=link_to candy.name, candy_path(candy.id)%></li>
+
+<%end%>
+</ul>
+<%=link_to 'Create a Candy', candies_new_path%>

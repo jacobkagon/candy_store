@@ -1,0 +1,17 @@
+<h1>Create a Candy</h1>
+<div>
+<%=form_tag candies_path do%>
+<%=label_tag "Candy Name"%><br>
+<%=text_field_tag :name%><br>
+<%=label_tag "Calories"%><br>
+<%=number_field_tag :calories%><br>
+<%=label_tag "Wrapper Color"%><br>
+<%=text_field_tag :wrapper_color%><br>
+<%=label_tag "Candy Contains Nuts?"%><br>
+<%=radio_button_tag :has_nuts, 'true'%><br>
+<%=label_tag "Candy Doesn't Contains Nuts?"%><br>
+<%=radio_button_tag :has_nuts, 'false'%><br>
+
+<%=submit_tag "Submit Your Candy"%>
+<%end%>
+</div>

@@ -1,0 +1,11 @@
+<h1>Candy Detail Page</h1>
+
+<h2>
+<%=@candy.name%>
+</h2>
+<ul>
+<li>Calories:<%=@candy.calories%></li>
+<li>Wrapper Color: <%=@candy.wrapper_color%></li>
+<li>Contains Nuts: <%=@candy.has_nuts%></li>
+</ul>
+<p><%= link_to "Candy List", candies_path%></p>
